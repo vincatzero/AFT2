@@ -16,7 +16,9 @@ void runMenu()
 {
 	GeneSequencer GeneSequencers;
 	string UserOption;
+	string userFile;
 	Chromosome newChromosome;
+
 	while (UserOption != "6")
 	{
 		cout << endl
@@ -51,6 +53,9 @@ void runMenu()
 		case 3:
 			break;
 		case 4:
+			cout << "Enter the file would you like to import from:" << endl;
+			getline(cin, userFile);
+			newChromosome = GeneSequencers.ImportChromosome(userFile);
 			break;
 		case 5:
 			break;

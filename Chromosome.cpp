@@ -20,20 +20,17 @@ void Chromosome::AnalyzeGenotype()
 	string expressedAllele;
 	string nucleotideSequence;
 	Allele allele;
+	nucleotideSequence = allele.GetVariant();
 
 	for (unsigned int i = 0; i < genes.size(); i++)
 	{
-		if (genes.at(i).GetName() == "dominant")
+		if (genes.at(i).GetName() == "test")
 		{
-			cout << "shit ";
-		};
-
+		}
 		//	cout << "Expressed allele:   " << genes.at(i). << endl;
 		//cout << "Nucleotide sequence:" << endl;
-	};
-};
-
-/*expressedAllele = allele.GetVariant();
+	}; /*expressedAllele = allele.GetVariant();
 			cout << "         Gene " << i + 1 << endl;
 			cout << "Name:               " << genes.at(i).GetName() << endl;
 			cout << "Genetic trait:      " << genes[i].GetTrait() << endl; */
+};
