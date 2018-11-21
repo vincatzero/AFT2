@@ -47,7 +47,6 @@ Chromosome GeneSequencer::CreateChromosome()
 };
 
 Chromosome GeneSequencer::ImportChromosome(const string &fileName) //NEED " = "" "?
-
 {
 	Chromosome newChromosome;
 	int counter = 0;
@@ -60,16 +59,16 @@ Chromosome GeneSequencer::ImportChromosome(const string &fileName) //NEED " = ""
 		getline(userFile, line); //FIXME counter number for file without emtpy last line
 		counter++;
 	}
+	counter -= 1;
 	cout << endl
-		 << counter - 1 << " genes found on file." << endl
+		 << counter << " genes found on file." << endl
 		 << "Would you like to display them? (y/n)";
 	getline(cin, displayGenes);
 
 	userFile.clear();
 	userFile.seekg(0, ios::beg);
-	for (int i = 1; i <= (counter - 1); i++) // (int i = 0; i < counter; i++)   //CAN I USE .GOOD HERE AGAIN?
+	for (int i = 1; i <= counter; i++)
 	{
-		//FIXED - "# OF CHROMOSOMES FOUND. WOULD YOU LIKE TO VIEW THEM Y/N?"
 		getline(userFile, name, ','); //DO I HAVE TO INCLUDE THE USER OPTION TO PICK A SPECIFIC CHROMOSOME?
 		getline(userFile, trait, ',');
 		getline(userFile, variant1, ',');
@@ -95,8 +94,11 @@ Chromosome GeneSequencer::ImportChromosome(const string &fileName) //NEED " = ""
 				 << "                   Gene sequence 2: " << sequence2 << endl //FIXME press enter to return to menu
 				 << "                    --------------";
 		}
+
 		Allele newAlleleA(variant1, type1, sequence1);
 		Allele newAlleleB(variant2, type2, sequence2);
+		newChromosome.InputFromFile(userFile);
+
 		Gene newGene(newAlleleA, newAlleleB);
 		newGene.SetNameandTrait(name, trait);
 		newChromosome.AddGene(newGene);

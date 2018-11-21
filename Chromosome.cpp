@@ -3,6 +3,7 @@
 #include "Gene.h"
 #include <iostream>
 #include <string>
+#include <fstream>
 using namespace std;
 
 Chromosome::Chromosome(){
@@ -33,4 +34,17 @@ void Chromosome::AnalyzeGenotype()
 			cout << "         Gene " << i + 1 << endl;
 			cout << "Name:               " << genes.at(i).GetName() << endl;
 			cout << "Genetic trait:      " << genes[i].GetTrait() << endl; */
+};
+
+void Chromosome::InputFromFile(ifstream &ifs)
+{
+	string output;
+	while (getline(ifs, output))
+	{
+		cout << output;
+	}
+	cout << "test";
+	/*(Gene newGene(newAlleleA, newAlleleB);
+	newGene.SetNameandTrait(name, trait);
+	newChromosome.AddGene(newGene);*/
 };
