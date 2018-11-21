@@ -6,14 +6,34 @@
 using namespace std;
 
 Chromosome::Chromosome(){
+	//default constructor needed?
 
 };
-Chromosome::Chromosome(string &x, string &y)
-{
-	geneName = x;
-	geneTrait = y;
-};
-void Chromosome::addGene(const Gene &x)
+
+void Chromosome::AddGene(const Gene &x)
 {
 	genes.push_back(x);
 };
+
+void Chromosome::AnalyzeGenotype()
+{
+	string expressedAllele;
+	string nucleotideSequence;
+	Allele allele;
+
+	for (unsigned int i = 0; i < genes.size(); i++)
+	{
+		if (genes.at(i).GetName() == "dominant")
+		{
+			cout << "shit ";
+		};
+
+		//	cout << "Expressed allele:   " << genes.at(i). << endl;
+		//cout << "Nucleotide sequence:" << endl;
+	};
+};
+
+/*expressedAllele = allele.GetVariant();
+			cout << "         Gene " << i + 1 << endl;
+			cout << "Name:               " << genes.at(i).GetName() << endl;
+			cout << "Genetic trait:      " << genes[i].GetTrait() << endl; */

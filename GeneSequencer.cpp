@@ -6,7 +6,7 @@
 
 using namespace std;
 
-void GeneSequencer::CreateChromosome()
+Chromosome GeneSequencer::CreateChromosome()
 {
 	string anotherGene = "y";
 	string name;
@@ -17,6 +17,7 @@ void GeneSequencer::CreateChromosome()
 	string type2;
 	string sequence2;
 	string variant2;
+	Chromosome newChromosome;
 
 	while (anotherGene == "y")
 	{
@@ -38,14 +39,15 @@ void GeneSequencer::CreateChromosome()
 		getline(cin, type2);
 		cout << "Enter the allele 2 nucleotide sequence (e.g. AGTC): " << endl;
 		getline(cin, sequence2);
+
 		Allele newAlleleA(variant1, type1, sequence1);
 		Allele newAlleleB(variant2, type2, sequence2);
 		Gene newGene(newAlleleA, newAlleleB);
-
-		Chromosome newChromosme(name, trait);
-		genes.push_back(newGene);
+		newGene.SetNameandTrait(name, trait);
+		newChromosome.AddGene(newGene);
 
 		cout << "Would you like to add another gene: (y/n)" << endl;
 		getline(cin, anotherGene);
 	}
+	return newChromosome;
 };

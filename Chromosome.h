@@ -12,10 +12,10 @@ class Chromosome
   public:
 	Chromosome();
 	Chromosome(string &x, string &y);
-	void addGene(const Gene &x);
+	void AddGene(const Gene &x);
+	void SetNameandTrait(const string &x, const string &y);
+	void AnalyzeGenotype();
 
   private:
 	vector<Gene> genes;
-	string geneName;
-	string geneTrait;
 };

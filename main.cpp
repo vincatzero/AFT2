@@ -16,6 +16,7 @@ void runMenu()
 {
 	GeneSequencer GeneSequencers;
 	string UserOption;
+	Chromosome newChromosome;
 	while (UserOption != "6")
 	{
 		cout << endl
@@ -42,9 +43,10 @@ void runMenu()
 		switch (userChoice)
 		{
 		case 1:
-			GeneSequencers.CreateChromosome();
+			newChromosome = GeneSequencers.CreateChromosome();
 			break;
 		case 2:
+			newChromosome.AnalyzeGenotype();
 			break;
 		case 3:
 			break;

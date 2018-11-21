@@ -12,8 +12,7 @@ class GeneSequencer
 {
 
   public:
-	void CreateChromosome();
+	Chromosome CreateChromosome();
 
   private:
-	vector<Gene> genes;
 };
