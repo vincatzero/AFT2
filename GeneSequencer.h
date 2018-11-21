@@ -25,4 +25,6 @@ class GeneSequencer
 	string type2;
 	string sequence2;
 	string variant2;
+	Allele allele;
+	vector<Chromosome> chromosomes;
 };

@@ -11,7 +11,7 @@ class Chromosome
 
   public:
 	Chromosome();
-	Chromosome(string &x, string &y);
+	Chromosome(Gene &x);
 	void AddGene(const Gene &x);
 	void SetNameandTrait(const string &x, const string &y);
 	void AnalyzeGenotype();

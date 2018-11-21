@@ -37,6 +37,7 @@ Chromosome GeneSequencer::CreateChromosome()
 		Allele newAlleleA(variant1, type1, sequence1);
 		Allele newAlleleB(variant2, type2, sequence2);
 		Gene newGene(newAlleleA, newAlleleB);
+
 		newGene.SetNameandTrait(name, trait);
 		newChromosome.AddGene(newGene);
 
@@ -62,7 +63,7 @@ Chromosome GeneSequencer::ImportChromosome(const string &fileName) //NEED " = ""
 	counter -= 1;
 	cout << endl
 		 << counter << " genes found on file." << endl
-		 << "Would you like to display them? (y/n)";
+		 << "Would you like to display them? (y/n): ";
 	getline(cin, displayGenes);
 
 	userFile.clear();
@@ -92,17 +93,21 @@ Chromosome GeneSequencer::ImportChromosome(const string &fileName) //NEED " = ""
 				 << "                   Gene variant 2:  " << variant2 << endl
 				 << "                   Gene type 2:     " << type2 << endl
 				 << "                   Gene sequence 2: " << sequence2 << endl //FIXME press enter to return to menu
-				 << "                    --------------";
+				 << "                   ------------------------";
 		}
 
 		Allele newAlleleA(variant1, type1, sequence1);
 		Allele newAlleleB(variant2, type2, sequence2);
-		newChromosome.InputFromFile(userFile);
+		//newChromosome.InputFromFile(userFile);
 
 		Gene newGene(newAlleleA, newAlleleB);
 		newGene.SetNameandTrait(name, trait);
 		newChromosome.AddGene(newGene);
 	}
+	cout << endl
+		 << "A chromosome object with the file information has been created" << endl
+		 << endl;
 	userFile.close();
+	allele.ReturnToMenu();
 	return newChromosome;
 };

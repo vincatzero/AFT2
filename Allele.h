@@ -1,5 +1,6 @@
 #include <vector>
 #include <string>
+
 #pragma once
 using namespace std;
 class Allele
@@ -9,6 +10,7 @@ class Allele
 	Allele();
 	string GetType();
 	string GetVariant();
+	void ReturnToMenu();
 
   private:
 	string alleleVariant;

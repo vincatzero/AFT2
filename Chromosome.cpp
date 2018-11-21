@@ -10,6 +10,9 @@ Chromosome::Chromosome(){
 	//default constructor needed?
 
 };
+Chromosome::Chromosome(Gene &x){
+
+};
 
 void Chromosome::AddGene(const Gene &x)
 {
@@ -41,7 +44,7 @@ void Chromosome::InputFromFile(ifstream &ifs)
 	string output;
 	while (getline(ifs, output))
 	{
-		cout << output;
+		//cout << output;
 	}
 	cout << "test";
 	/*(Gene newGene(newAlleleA, newAlleleB);

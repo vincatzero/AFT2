@@ -13,8 +13,6 @@ class Gene
 	string GetName();
 	string GetTrait();
 
-	string GetNucleotideSequence();
-
   private:
 	Allele allele_A;
 	Allele allele_B;

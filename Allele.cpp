@@ -1,4 +1,6 @@
 #include "Allele.h"
+#include <iostream>
+
 #include <string>
 using namespace std;
 
@@ -24,4 +26,12 @@ string Allele::GetType()
 string Allele::GetVariant()
 {
 	return alleleVariant;
+};
+
+void Allele::ReturnToMenu()
+{
+
+	char c;
+	cout << "Press enter to return to menu:";
+	cin.get(c);
 };
