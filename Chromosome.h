@@ -19,4 +19,5 @@ class Chromosome
 
   private:
 	vector<Gene> genes;
+	Allele allele_A;
 };

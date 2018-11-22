@@ -53,6 +53,10 @@ Chromosome GeneSequencer::ImportChromosome(const string &fileName) //NEED " = ""
 	int counter = 0;
 	string fileToOpen = fileName;
 	ifstream userFile(fileName);
+	if (!userFile.is_open())
+	{
+		cout << "ERROR. File not found" << endl;
+	};
 	string line;
 	string displayGenes = "y";
 	while (!userFile.eof())

@@ -30,7 +30,6 @@ string Allele::GetVariant()
 
 void Allele::ReturnToMenu()
 {
-
 	char c;
 	cout << "Press enter to return to menu:";
 	cin.get(c);

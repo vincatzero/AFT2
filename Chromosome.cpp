@@ -4,6 +4,7 @@
 #include <iostream>
 #include <string>
 #include <fstream>
+
 using namespace std;
 
 Chromosome::Chromosome(){
@@ -21,23 +22,22 @@ void Chromosome::AddGene(const Gene &x)
 
 void Chromosome::AnalyzeGenotype()
 {
+	Allele allele;
 	string expressedAllele;
 	string nucleotideSequence;
-	Allele allele;
+	Allele Alleletest;
 	nucleotideSequence = allele.GetVariant();
-
-	for (unsigned int i = 0; i < genes.size(); i++)
+	for (int i = 0; i < this->allele_A; i++)
 	{
-		if (genes.at(i).GetName() == "test")
-		{
-		}
-		//	cout << "Expressed allele:   " << genes.at(i). << endl;
-		//cout << "Nucleotide sequence:" << endl;
-	}; /*expressedAllele = allele.GetVariant();
+		cout << genes[i]->Allele.GetVariant();
+	};
+
+	//	cout << "Expressed allele:   " << genes.at(i). << endl;
+	//cout << "Nucleotide sequence:" << endl;
+}; /*expressedAllele = allele.GetVariant();
 			cout << "         Gene " << i + 1 << endl;
 			cout << "Name:               " << genes.at(i).GetName() << endl;
 			cout << "Genetic trait:      " << genes[i].GetTrait() << endl; */
-};
 
 void Chromosome::InputFromFile(ifstream &ifs)
 {
